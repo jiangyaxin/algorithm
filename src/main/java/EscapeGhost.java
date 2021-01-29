@@ -66,8 +66,8 @@
 public class EscapeGhost {
 
     public boolean escapeGhosts(int[][] ghosts, int[] target) {
-        for(int i=0 ; i<ghosts.length ; i++){
-            if(getManhattanDistance(ghosts[i],target) <= getManhattanDistance(new int[]{0,0},target)){
+        for (int[] ghost : ghosts) {
+            if (getManhattanDistance(ghost, target) <= getManhattanDistance(new int[]{0, 0}, target)) {
                 return Boolean.FALSE;
             }
         }

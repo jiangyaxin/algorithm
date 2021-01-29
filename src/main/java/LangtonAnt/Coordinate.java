@@ -38,7 +38,7 @@ public class Coordinate{
     }
 
     public String generateId(){
-        return new StringBuilder().append(x).append("_").append(y).toString();
+        return x+"_"+y;
     }
 
     public int getX() {

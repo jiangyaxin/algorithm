@@ -10,8 +10,8 @@ public class Ant {
 
     private Position currentPosition;
     private Direction currentDirection;
-    private MoveCount moveCount;
-    private Path path;
+    private final MoveCount moveCount;
+    private final Path path;
 
     public Ant(){
         this.currentPosition = new Position(new Coordinate(0,0));
@@ -44,5 +44,4 @@ public class Ant {
     public List<String> print(){
         return this.path.print();
     }
-
 }

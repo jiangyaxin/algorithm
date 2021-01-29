@@ -31,9 +31,9 @@ public class DistributeCandy {
         if(candyType.length == 0){
             return 0;
         }
-        Set set = new HashSet(candyType.length);
-        for(int i=0 ; i<candyType.length ; i++){
-            set.add(candyType[i]);
+        Set<Integer> set = new HashSet<>(candyType.length);
+        for (int j : candyType) {
+            set.add(j);
         }
         int typeNumber = set.size();
         return Math.min(typeNumber,candyType.length/2);

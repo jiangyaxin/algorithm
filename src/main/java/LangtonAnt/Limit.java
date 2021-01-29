@@ -15,10 +15,10 @@ public class Limit {
         int x = coordinate.getX();
         int y = coordinate.getY();
 
-        this.minX = x < this.minX ? x : this.minX;
-        this.minY = y < this.minY ? y : this.minY;
-        this.maxX = x > this.maxX ? x : this.maxX;
-        this.maxY = y > this.maxY ? y : this.maxY;
+        this.minX = Math.min(x, this.minX);
+        this.minY = Math.min(y, this.minY);
+        this.maxX = Math.max(x, this.maxX);
+        this.maxY = Math.max(y, this.maxY);
     }
 
     public int getMinX() {

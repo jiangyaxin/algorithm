@@ -19,7 +19,7 @@ public enum Direction {
 
     public Direction rotate(Color color){
         if(color.isBlack()){
-            return Direction.values()[(this.ordinal()-1)%4];
+            return Direction.values()[(this.ordinal()+4-1)%4];
         }
         if(color.isWhite()){
             return Direction.values()[(this.ordinal()+1)%4];

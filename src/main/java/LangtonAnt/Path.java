@@ -17,7 +17,7 @@ public class Path {
 
     private Direction lastDirection;
 
-    private Limit limit = new Limit();
+    private final Limit limit = new Limit();
 
     public void recordTrace(Position position,Direction direction){
         this.lastPosition = position;
