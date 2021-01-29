@@ -10,8 +10,8 @@ public class SubSortTests {
 
     @Test
     public void subSortTest() {
-        assertThat(new SubSort().subSort(new int[]{1, 2, 4, 7, 10, 11, 7, 12, 6, 7, 16, 18, 19})).as("SubSortTests").containsExactly(new int[]{3, 9});
-        assertThat(new SubSort().subSort(new int[]{0})).as("SubSortTests").containsExactly(new int[]{-1, -1});
+        assertThat(new SubSort().subSort(new int[]{1, 2, 4, 7, 10, 11, 7, 12, 6, 7, 16, 18, 19})).as("SubSortTests").containsExactly(3, 9);
+        assertThat(new SubSort().subSort(new int[]{0})).as("SubSortTests").containsExactly(-1, -1);
         int[] ints = {-580, -578, -577, -575, -575, -574, -571, -570, -565, -561, -560, -558, -556, -556, -555, -553, -552, -550, -547, -534, -532, -530, -529, -529,
                 -522, -522, -521, -520, -519, -518, -517, -515, -515, -513, -512, -511, -510, -509, -501, -498, -497, -496, -495, -494, -491, -488, -488, -488, -487,
                 -486, -484, -483, -483, -482, -479, -477, -476, -476, -473, -472, -472, -470, -464, -464, -463, -462, -457, -453, -452, -451, -447, -447, -446, -443,
@@ -33,6 +33,6 @@ public class SubSortTests {
                 407, 421, 572, 574, 518, 507, 559, 490, 465, 483, 461, 483, 408, 452, 479, 542, 418, 393, 527, 442, 511, 531, 544, 403, 480, 474, 570, 466, 486, 437,
                 539, 483, 571, 418, 484, 567, 452, 554, 398, 523, 479, 472, 395, 496, 470, 582, 530, 442, 581, 421, 417, 553, 560, 576, 485, 481, 489, 521, 570, 552,
                 558, 503, 514, 559, 514, 460, 438, 511, 432, 542, 480, 582, 520, 543, 513, 511, 397, 502, 458, 517, 505, 418, 507, 417};
-        assertThat(new SubSort().subSort(ints)).as("SubSortTests").containsExactly(new int[]{494, 584});
+        assertThat(new SubSort().subSort(ints)).as("SubSortTests").containsExactly(494, 584);
     }
 }
