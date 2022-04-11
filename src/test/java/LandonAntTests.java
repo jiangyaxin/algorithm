@@ -1,4 +1,4 @@
-import LangtonAnt.LandonAnt;
+import langton.ant.LandonAnt;
 import org.assertj.core.util.Lists;
 import org.junit.Test;
 

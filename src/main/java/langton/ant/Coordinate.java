@@ -1,4 +1,4 @@
-package LangtonAnt;
+package langton.ant;
 
 import java.util.Objects;
 
