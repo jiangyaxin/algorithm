@@ -27,7 +27,7 @@ import java.util.*;
  * @author jiangyaxin
  * @since 2022/4/12 20:56
  */
-public class LetterCombinations {
+public class LetterCombination {
 
     private static final Map<String,String> NUMBER_LETTER_MAP = new HashMap<>();
 

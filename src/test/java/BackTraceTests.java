@@ -85,7 +85,7 @@ public class BackTraceTests {
 
     @Test
     public void letterCombinationsTest(){
-        assertThat(new LetterCombinations().letterCombinations("23"))
+        assertThat(new LetterCombination().letterCombinations("23"))
                 .as("letterCombinationsTest")
                 .isEqualTo(Lists.list("ad","ae","af","bd","be","bf","cd","ce","cf"));
     }
@@ -105,6 +105,74 @@ public class BackTraceTests {
                         Lists.list("bb")
                 ));
 
+    }
+
+    @Test
+    public void restoreIpAddressTest(){
+        assertThat(new RestoreIpAddress().restoreIpAddresses("101023"))
+                .as("partitionTest")
+                .isEqualTo(Lists.list(
+                        "1.0.10.23","1.0.102.3","10.1.0.23","10.10.2.3","101.0.2.3"
+                ));
+        assertThat(new RestoreIpAddress().restoreIpAddresses("0000"))
+                .as("partitionTest")
+                .isEqualTo(Lists.list(
+                        "0.0.0.0"
+                ));
+    }
+
+    @Test
+    public void subsetTest(){
+        assertThat(new Subset().subsets(new int[]{1,2,3}))
+                .as("subsetTest")
+                .isEqualTo(Lists.list(
+                        Lists.emptyList(),
+                        Lists.list(1),
+                        Lists.list(1,2),
+                        Lists.list(1,2,3),
+                        Lists.list(1,3),
+                        Lists.list(2),
+                        Lists.list(2,3),
+                        Lists.list(3)
+                ));
+    }
+
+    @Test
+    public void subsetsWithDupTest(){
+        assertThat(new Subset().subsetsWithDup(new int[]{1,2,2}))
+                .as("subsetsWithDupTest")
+                .isEqualTo(Lists.list(
+                        Lists.emptyList(),
+                        Lists.list(1),
+                        Lists.list(1,2),
+                        Lists.list(1,2,2),
+                        Lists.list(2),
+                        Lists.list(2,2)
+                ));
+        assertThat(new Subset().subsetsWithDup(new int[]{4,4,4,1,4}))
+                .as("subsetsWithDupTest")
+                .isEqualTo(Lists.list(
+                        Lists.emptyList(),
+                        Lists.list(1),
+                        Lists.list(1,4),
+                        Lists.list(1,4,4),
+                        Lists.list(1,4,4,4),
+                        Lists.list(1,4,4,4,4),
+                        Lists.list(4),
+                        Lists.list(4,4),
+                        Lists.list(4,4,4),
+                        Lists.list(4,4,4,4)
+                ));
+    }
+
+    @Test
+    public void solveNQueenTest(){
+        assertThat(new SolveNQueen().solveNQueens(4))
+                .as("solveNQueenTest")
+                .isEqualTo(Lists.list(
+                        Lists.list(".Q..","...Q","Q...","..Q."),
+                        Lists.list("..Q.","Q...","...Q",".Q..")
+                ));
     }
 
 }
