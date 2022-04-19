@@ -2,8 +2,6 @@ import back.trace.*;
 import org.assertj.core.util.Lists;
 import org.junit.Test;
 
-import java.util.List;
-
 import static org.assertj.core.api.Assertions.assertThat;
 
 /**
@@ -250,5 +248,103 @@ public class BackTraceTests {
                 .isEqualTo(Lists.list("JFK","MUC","LHR","SFO","SJC"));
 
 
+    }
+
+    @Test
+    public void canPartitionSubsetTest(){
+        assertThat(new CanPartitionSubset().canPartitionKSubsets(new int[]{1,1,1,1,2,2,2,2},2))
+                .as("canPartitionSubsetTest")
+                .isEqualTo(true);
+        assertThat(new CanPartitionSubset().canPartitionKSubsets(new int[]{4,3,2,3,5,2,1},4))
+                .as("canPartitionSubsetTest")
+                .isEqualTo(true);
+    }
+
+    @Test
+    public void numIslandsTest(){
+        char[] char1 = new char[]{'1','1','1','1','0'};
+        char[] char2 = new char[]{'1','1','0','1','0'};
+        char[] char3 = new char[]{'1','1','0','0','0'};
+        char[] char4 = new char[]{'0','0','0','0','0'};
+        char[][] params = {char1, char2, char3, char4};
+        assertThat(new NumIslands().numIslands(params))
+                .as("numIslandsTest")
+                .isEqualTo(1);
+    }
+
+    @Test
+    public void closedIslandTest(){
+        assertThat(new ClosedIsland().closedIsland(new int[][]{
+                {1,1,1,1,1,1,1,0},
+                {1,0,0,0,0,1,1,0},
+                {1,0,1,0,1,1,1,0},
+                {1,0,0,0,0,1,0,1},
+                {1,1,1,1,1,1,1,0}
+        }))
+                .as("closedIslandTest")
+                .isEqualTo(2);
+
+        assertThat(new ClosedIsland().closedIsland(new int[][]{
+                {0,0,1,1,0,1,0,0,1,0},
+                {1,1,0,1,1,0,1,1,1,0},
+                {1,0,1,1,1,0,0,1,1,0},
+                {0,1,1,0,0,0,0,1,0,1},
+                {0,0,0,0,0,0,1,1,1,0},
+                {0,1,0,1,0,1,0,1,1,1},
+                {1,0,1,0,1,1,0,0,0,1},
+                {1,1,1,1,1,1,0,0,0,0},
+                {1,1,1,0,0,1,0,1,0,1},
+                {1,1,1,0,1,1,0,1,1,0}
+        }))
+                .as("closedIslandTest")
+                .isEqualTo(5);
+    }
+
+    @Test
+    public void numEnclavesTest(){
+        assertThat(new NumEnclaves().numEnclaves(new int[][]{
+                {0,1,1,0},
+                {0,0,1,0},
+                {0,0,1,0},
+                {0,0,0,0}
+        }))
+                .as("numEnclavesTest")
+                .isEqualTo(0);
+    }
+
+    @Test
+    public void maxAreaOfIslandTest(){
+        assertThat(new MaxAreaOfIsland().maxAreaOfIsland(new int[][]{
+                {0,0,1,0,0,0,0,1,0,0,0,0,0},
+                {0,0,0,0,0,0,0,1,1,1,0,0,0},
+                {0,1,1,0,1,0,0,0,0,0,0,0,0},
+                {0,1,0,0,1,1,0,0,1,0,1,0,0},
+                {0,1,0,0,1,1,0,0,1,1,1,0,0},
+                {0,0,0,0,0,0,0,0,0,0,1,0,0},
+                {0,0,0,0,0,0,0,1,1,1,0,0,0},
+                {0,0,0,0,0,0,0,1,1,0,0,0,0}
+        }))
+                .as("maxAreaOfIslandTest")
+                .isEqualTo(6);
+    }
+
+    @Test
+    public void countSubIslandsTest(){
+        assertThat(new CountSubIslands().countSubIslands(
+                new int[][]{
+                {1,1,1,0,0},
+                {0,1,1,1,1},
+                {0,0,0,0,0},
+                {1,0,0,0,0},
+                {1,1,0,1,1}},
+                new int[][]{
+                {1,1,1,0,0},
+                {0,0,1,1,1},
+                {0,1,0,0,0},
+                {1,0,1,1,0},
+                {0,1,0,1,0}}
+        ))
+                .as("countSubIslandsTest")
+                .isEqualTo(3);
     }
 }
