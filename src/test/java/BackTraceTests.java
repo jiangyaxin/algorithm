@@ -347,4 +347,13 @@ public class BackTraceTests {
                 .as("countSubIslandsTest")
                 .isEqualTo(3);
     }
+
+    @Test
+    public void generateParenthesisTest(){
+        assertThat(new GenerateParenthesis().generateParenthesis(3))
+                .as("generateParenthesisTest")
+                .isEqualTo(Lists.list(
+                        "((()))","(()())","(())()","()(())","()()()"
+                ));
+    }
 }
