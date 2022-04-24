@@ -48,8 +48,7 @@ public class LinkTests {
     @Test
     public void hasCycleTest(){
         ListNode listNode1 = new ListNode(2,null);
-        ListNode listNode2 = new ListNode(0, new ListNode(-4, listNode1));
-        listNode1.next = listNode2;
+        listNode1.next = new ListNode(0, new ListNode(-4, listNode1));
         assertThat(new HasCycle().hasCycle(new ListNode(3,listNode1)))
                 .as("hasCycleTest")
                 .isEqualTo(true);
@@ -58,8 +57,7 @@ public class LinkTests {
     @Test
     public void detectCycleTest(){
         ListNode listNode1 = new ListNode(2,null);
-        ListNode listNode2 = new ListNode(0, new ListNode(-4, listNode1));
-        listNode1.next = listNode2;
+        listNode1.next = new ListNode(0, new ListNode(-4, listNode1));
         assertThat(new DetectCycle().detectCycle(new ListNode(3,listNode1)))
                 .as("detectCycleTest")
                 .isEqualTo(listNode1);
