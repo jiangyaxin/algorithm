@@ -89,4 +89,40 @@ public class LinkTests {
                 .as("getIntersectionNodeTest")
                 .isEqualTo(intersectionNode);
     }
+
+    @Test
+    public void reverseListTest(){
+
+        assertThat(new ReverseList().reverseList(new ListNode(1,new ListNode(2,new ListNode(3,new ListNode(4,new ListNode(5,null)))))).toString())
+                .as("reverseListTest")
+                .isEqualTo(new ListNode(5,new ListNode(4,new ListNode(3,new ListNode(2,new ListNode(1,null))))).toString());
+    }
+
+    @Test
+    public void reverseBetweenTest(){
+
+        assertThat(new ReverseBetween().reverseBetween(new ListNode(1,new ListNode(2,new ListNode(3,new ListNode(4,new ListNode(5,null))))),2,4).toString())
+                .as("reverseBetweenTest")
+                .isEqualTo(new ListNode(1,new ListNode(4,new ListNode(3,new ListNode(2,new ListNode(5,null))))).toString());
+    }
+
+    @Test
+    public void reverseKGroupTest(){
+
+        assertThat(new ReverseKGroup().reverseKGroup(new ListNode(1,new ListNode(2,new ListNode(3,new ListNode(4,new ListNode(5,null))))),1).toString())
+                .as("reverseKGroupTest")
+                .isEqualTo(new ListNode(1,new ListNode(2,new ListNode(3,new ListNode(4,new ListNode(5,null))))).toString());
+
+        assertThat(new ReverseKGroup().reverseKGroup(new ListNode(1,new ListNode(2,null)),2).toString())
+                .as("reverseKGroupTest")
+                .isEqualTo(new ListNode(2,new ListNode(1,null)).toString());
+
+        assertThat(new ReverseKGroup().reverseKGroup(new ListNode(1,new ListNode(2,new ListNode(3,new ListNode(4,new ListNode(5,null))))),3).toString())
+                .as("reverseKGroupTest")
+                .isEqualTo(new ListNode(3,new ListNode(2,new ListNode(1,new ListNode(4,new ListNode(5,null))))).toString());
+
+        assertThat(new ReverseKGroup().reverseKGroup(new ListNode(1,new ListNode(2,new ListNode(3,new ListNode(4,new ListNode(5,null))))),2).toString())
+                .as("reverseKGroupTest")
+                .isEqualTo(new ListNode(2,new ListNode(1,new ListNode(4,new ListNode(3,new ListNode(5,null))))).toString());
+    }
 }
