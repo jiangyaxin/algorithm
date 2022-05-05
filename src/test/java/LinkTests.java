@@ -125,4 +125,12 @@ public class LinkTests {
                 .as("reverseKGroupTest")
                 .isEqualTo(new ListNode(2,new ListNode(1,new ListNode(4,new ListNode(3,new ListNode(5,null))))).toString());
     }
+
+    @Test
+    public void isPalindromeTest(){
+
+        assertThat(new IsPalindrome().isPalindrome(new ListNode(1,new ListNode(2,new ListNode(2,new ListNode(1,null))))))
+                .as("isPalindromeTest")
+                .isEqualTo(true);
+    }
 }
