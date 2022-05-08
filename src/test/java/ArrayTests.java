@@ -1,3 +1,5 @@
+import array.CarPooling;
+import array.CorpFlightBookings;
 import array.NumArray;
 import array.NumMatrix;
 import org.junit.Test;
@@ -38,4 +40,20 @@ public class ArrayTests {
                 .isEqualTo(12);
     }
 
+    @Test
+    public void corpFlightBookingsTest(){
+        assertThat(new CorpFlightBookings().corpFlightBookings(new int[][]{{1,2,10},{2,3,20},{2,5,25}},5))
+                .as("corpFlightBookingsTest")
+                .isEqualTo(new int[]{10,55,45,25,25});
+    }
+
+    @Test
+    public void carPoolingTest(){
+        assertThat(new CarPooling().carPooling(new int[][]{{2,1,5},{3,5,7}},3))
+                .as("carPoolingTest")
+                .isEqualTo(true);
+        assertThat(new CarPooling().carPooling(new int[][]{{9,0,1},{3,3,7}},4))
+                .as("carPoolingTest")
+                .isEqualTo(false);
+    }
 }
