@@ -1,7 +1,4 @@
-import array.CarPooling;
-import array.CorpFlightBookings;
-import array.NumArray;
-import array.NumMatrix;
+import array.*;
 import org.junit.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -55,5 +52,12 @@ public class ArrayTests {
         assertThat(new CarPooling().carPooling(new int[][]{{9,0,1},{3,3,7}},4))
                 .as("carPoolingTest")
                 .isEqualTo(false);
+    }
+
+    @Test
+    public void removeDuplicatesTest(){
+        assertThat(new RemoveDuplicates().removeDuplicates(new int[]{1,1,2}))
+                .as("removeDuplicatesTest")
+                .isEqualTo(2);
     }
 }
