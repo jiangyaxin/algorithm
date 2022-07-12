@@ -1,6 +1,7 @@
 import dp.CoinChange;
 import dp.LengthOfLIS;
 import dp.MaxEnvelopes;
+import dp.MinFallingPathSum;
 import org.junit.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -41,5 +42,16 @@ public class DpTests {
                 }))
                 .as("maxEnvelopesTest")
                 .isEqualTo(3);
+    }
+
+    @Test
+    public void minFallingPathSumTest(){
+        assertThat(new MinFallingPathSum().minFallingPathSum(new int[][]{
+                {2,1,3},
+                {6,5,4},
+                {7,8,9}
+        }))
+                .as("minFallingPathSumTest")
+                .isEqualTo(13);
     }
 }
