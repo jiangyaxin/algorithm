@@ -1,7 +1,4 @@
-import dp.CoinChange;
-import dp.LengthOfLIS;
-import dp.MaxEnvelopes;
-import dp.MinFallingPathSum;
+import dp.*;
 import org.junit.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -53,5 +50,24 @@ public class DpTests {
         }))
                 .as("minFallingPathSumTest")
                 .isEqualTo(13);
+    }
+
+    @Test
+    public void minDistanceTest(){
+        assertThat(new MinDistance().minDistance("horse","ros"))
+                .as("minDistanceTest")
+                .isEqualTo(3);
+        assertThat(new MinDistance().minDistance("sea","eat"))
+                .as("minDistanceTest")
+                .isEqualTo(2);
+        assertThat(new MinDistance().minDistance("intention","execution"))
+                .as("minDistanceTest")
+                .isEqualTo(5);
+        assertThat(new MinDistance().minDistance("a","a"))
+                .as("minDistanceTest")
+                .isEqualTo(0);
+        assertThat(new MinDistance().minDistance("park","spake"))
+                .as("minDistanceTest")
+                .isEqualTo(3);
     }
 }
