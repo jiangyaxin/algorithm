@@ -70,4 +70,12 @@ public class DpTests {
                 .as("minDistanceTest")
                 .isEqualTo(3);
     }
+
+    @Test
+    public void maxSubArrayTest(){
+        assertThat(new MaxSubArray().maxSubArray(new int[]{-2,1,-3,4,-1,2,1,-5,4}))
+                .as("maxSubArrayTest")
+                .isEqualTo(6);
+    }
+
 }
