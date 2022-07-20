@@ -78,4 +78,25 @@ public class DpTests {
                 .isEqualTo(6);
     }
 
+    @Test
+    public void longestCommonSubsequenceTest(){
+        assertThat(new LongestCommonSubsequence().longestCommonSubsequence("abcde","ace"))
+                .as("longestCommonSubsequenceTest")
+                .isEqualTo(3);
+    }
+
+    @Test
+    public void minDistance2Test(){
+        assertThat(new MinDistance2().minDistance("leetcode","etco"))
+                .as("minDistance2Test")
+                .isEqualTo(4);
+    }
+
+    @Test
+    public void minimumDeleteSumTest(){
+        assertThat(new MinimumDeleteSum().minimumDeleteSum("sea","eat"))
+                .as("minimumDeleteSumTest")
+                .isEqualTo(231);
+    }
+
 }
