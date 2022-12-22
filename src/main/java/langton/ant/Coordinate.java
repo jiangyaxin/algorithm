@@ -16,7 +16,7 @@ public class Coordinate{
         this.y = y;
     }
 
-    public Coordinate change(Direction direction){
+    public Coordinate moveOneStep(Direction direction){
         Coordinate coordinate;
         switch (direction){
             case UP:
@@ -35,10 +35,6 @@ public class Coordinate{
                 throw new TypeNotPresentException(direction.getValue(),new RuntimeException("The direction don't has change method"));
         }
         return coordinate;
-    }
-
-    public String generateId(){
-        return x+"_"+y;
     }
 
     public int getX() {

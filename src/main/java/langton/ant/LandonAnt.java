@@ -43,7 +43,7 @@ import java.util.List;
 public class LandonAnt {
 
     public List<String> printKMoves(int K) {
-        Ant ant = new Ant();
+        Ant ant = new Ant(0,0);
         while (!ant.achieveGoal(K)){
             ant.move();
         }
