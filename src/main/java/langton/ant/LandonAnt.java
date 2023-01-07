@@ -47,6 +47,6 @@ public class LandonAnt {
         while (!ant.achieveGoal(K)){
             ant.move();
         }
-        return ant.print();
+        return ant.printPath();
     }
 }

@@ -41,7 +41,7 @@ public class Ant {
         return this.moveCount.reach(K);
     }
 
-    public List<String> print(){
+    public List<String> printPath(){
         return this.path.print();
     }
 }
