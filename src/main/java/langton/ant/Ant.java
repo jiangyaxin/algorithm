@@ -8,33 +8,29 @@ import java.util.List;
  */
 public class Ant {
 
-    private Position currentPosition;
-    private Direction currentDirection;
+    private Coordinate coordinate;
+    private Direction direction;
     private final MoveCount moveCount;
-    private final Path path;
+    private final Grid grid;
 
-    public Ant(){
-        this.currentPosition = new Position(new Coordinate(0,0));
-        this.currentDirection = Direction.RIGHT;
+    public Ant(int initX,int initY){
+        this.coordinate = new Coordinate(initX,initY);
+        this.direction = Direction.RIGHT;
         this.moveCount = new MoveCount();
-        this.path = new Path();
-        this.path.recordTrace(currentPosition, currentDirection);
+
+        this.grid = new Grid(coordinate);
     }
 
     public void move(){
-        Color currentPositionColor = currentPosition.getColor();
-        Coordinate currentPositionCoordinate = currentPosition.getCoordinate();
+        Color originColor = grid.reverseColor(coordinate);
+        Direction nextDirection = direction.rotate(originColor);
+        Coordinate nextCoordinate = coordinate.moveOneStep(nextDirection);
+        grid.expand(nextCoordinate);
 
-        Direction newDirection = currentDirection.rotate(currentPositionColor);
-        Coordinate newCoordinate = currentPositionCoordinate.change(newDirection);
-        Position newPosition = path.contains(newCoordinate) ? path.getPosition(newCoordinate) : new Position(newCoordinate);
+        this.coordinate = nextCoordinate;
+        this.direction = nextDirection;
 
-        currentPosition.reverseColor();
-        this.currentPosition = newPosition;
-        this.currentDirection = newDirection;
-        path.recordTrace(newPosition,newDirection);
         moveCount.addStep();
-
     }
 
     public boolean achieveGoal(int K){
@@ -42,6 +38,6 @@ public class Ant {
     }
 
     public List<String> printPath(){
-        return this.path.print();
+        return this.grid.print(coordinate,direction);
     }
 }
